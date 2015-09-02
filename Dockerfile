@@ -83,7 +83,7 @@ RUN apt-get install -q -y --no-install-recommends \
 RUN apt-get clean
 
 # IMPORTANT: Change the default login/password of ruTorrent before build
-RUN htpasswd -cb /usr/share/nginx/html/rutorrent/.htpasswd docktorrent p@ssw0rd
+#RUN htpasswd -cb /usr/share/nginx/html/rutorrent/.htpasswd docktorrent p@ssw0rd
 
 # Copy config files
 COPY config/nginx/default /etc/nginx/sites-available/default
