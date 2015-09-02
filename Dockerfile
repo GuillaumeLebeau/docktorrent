@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-MAINTAINER kfei <kfei@kfei.net>
+MAINTAINER guillaumegl <guillaume.lebeau@outlook.com>
 
 ENV VER_LIBTORRENT 0.13.4
 ENV VER_RTORRENT 0.9.4
@@ -100,7 +100,7 @@ ENTRYPOINT ["/usr/local/bin/docktorrent"]
 EXPOSE 80 9527 45566
 
 # Declare volumes
-VOLUME ["/rtorrent", "/var/log"]
+VOLUME ["/data/torrent", "/var/log"]
 
 # This should be removed in the latest version of Docker
-ENV HOME /root
+#ENV HOME /root

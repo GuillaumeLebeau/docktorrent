@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Create working directories if not exists
-mkdir -p /rtorrent/{downloads,watch,.session,rutorrent/user-profiles,rutorrent/user-profiles/torrents}
+mkdir -p /data/torrent/{downloads,watch,.session,rutorrent/user-profiles,rutorrent/user-profiles/torrents}
 
 # Change permission to ruTorrent's webserver user
-chown -R www-data:www-data /rtorrent
+chown -R www-data:www-data /data/torrent
 
 # Override rTorrent settings
 [ "${IP}" ] && {

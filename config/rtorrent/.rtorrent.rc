@@ -18,19 +18,19 @@ max_uploads = 16
 upload_rate = 512
 
 # Default directory to save the downloaded torrents.
-directory = /rtorrent/downloads
+directory = /data/torrent/downloads
 
-system.method.insert = d.get_finished_dir,simple,"cat=/rtorrent/finished/,$d.get_custom1="
+system.method.insert = d.get_finished_dir,simple,"cat=/data/torrent/finished/,$d.get_custom1="
 system.method.set_key = event.download.finished,move_complete,"d.set_directory=$d.get_finished_dir=;execute=mkdir,-p,$d.get_finished_dir=;execute=mv,-u,$d.get_base_path=,$d.get_finished_dir="
 
 # Default session directory. Make sure you don't run multiple instance
 # of rtorrent using the same session directory. Perhaps using a
 # relative path?
-session = /rtorrent/.session
+session = /data/torrent/.session
 
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
-schedule = watch_directory,5,5,load_start=/rtorrent/watch/*.torrent
+schedule = watch_directory,5,5,load_start=/data/torrent/watch/*.torrent
 schedule = untied_directory,5,5,stop_untied=
 
 # Close torrents when diskspace is low.

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Checking the lock
-if [ -f /rtorrent/.session/rtorrent.lock ]; then
+if [ -f /data/torrent/.session/rtorrent.lock ]; then
     echo
     prompt="The rTorrent session lock is detected, it can be a result of an \n"
     prompt="${prompt}unexpected exit or other running rTorrent instance.\n"
@@ -10,7 +10,7 @@ if [ -f /rtorrent/.session/rtorrent.lock ]; then
     read -r -p "${prompt}" response
     response=${response,,}
     if [[ $response =~ ^(yes|y)$ ]]; then
-        rm -f /rtorrent/.session/rtorrent.lock
+        rm -f /data/torrent/.session/rtorrent.lock
     else
         s6-svscanctl -t /service
     fi

@@ -20,7 +20,7 @@ BitTorrent box.
 
 Clone this repository and build the image locally:
 ```bash
-git clone https://github.com/kfei/docktorrent
+git clone https://github.com/GuillaumeLebeau/docktorrent
 cd docktorrent
 docker build -t docktorrent .
 ```
@@ -28,7 +28,7 @@ docker build -t docktorrent .
 The building process may take some time. You can just pull the latest image
 from mine:
 ```bash
-docker pull kfei/docktorrent
+docker pull guillaumegl/docktorrent
 ```
 
 After the image is built or pulled, run the docktorrent container, for example:
@@ -36,7 +36,7 @@ After the image is built or pulled, run the docktorrent container, for example:
 docker run -it \
     -p 80:80 -p 45566:45566 -p 9527:9527/udp \
     --dns 8.8.8.8 \
-    -v /data-store:/rtorrent \
+    -v /data-store:/data/torrent \
     -e UPLOAD_RATE=1024 \
     docktorrent
 ```

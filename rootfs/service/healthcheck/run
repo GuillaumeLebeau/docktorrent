@@ -35,7 +35,7 @@ do
     then
         sleep $interval
     else
-        rm -f /rtorrent/.session/rtorrent.lock
+        rm -f /data/torrent/.session/rtorrent.lock
         s6-svc -k /service/rtorrent
         sleep $delay_start
     fi
