@@ -74,10 +74,10 @@ RUN apt-get install -q -y --no-install-recommends \
 
 # For ffmpeg, which is required by the ruTorrent screenshots plugin
 # This increases ~53 MB of the image size, remove it if you really don't need screenshots
-RUN echo "deb http://www.deb-multimedia.org jessie main" >> /etc/apt/sources.list && \
-    apt-get update && apt-get install -q -y --force-yes --no-install-recommends \
-    deb-multimedia-keyring \
-    ffmpeg
+#RUN echo "deb http://www.deb-multimedia.org jessie main" >> /etc/apt/sources.list && \
+#    apt-get update && apt-get install -q -y --force-yes --no-install-recommends \
+#    deb-multimedia-keyring \
+#    ffmpeg
 
 # IMPORTANT: Change the default login/password of ruTorrent before build
 RUN htpasswd -cb /usr/share/nginx/html/rutorrent/.htpasswd docktorrent p@ssw0rd
